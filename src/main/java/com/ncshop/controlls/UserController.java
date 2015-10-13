@@ -1,6 +1,7 @@
 package com.ncshop.controlls;
 
 import java.util.Date;
+import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -137,12 +138,6 @@ public class UserController {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-<<<<<<< HEAD
-
-=======
-		
-		
->>>>>>> 977260e4e5108e7aebf63963ffd0bfd8dd8abbea
 	}
 
 	/**
@@ -151,6 +146,18 @@ public class UserController {
 	@RequestMapping("/addOrders")
 	public String addCart(HttpServletRequest request,
 			HttpServletResponse response) {
+
+		
+		Enumeration parameterNames = request.getParameterNames();
+		while (parameterNames.hasMoreElements()) {
+			String goodId = (String) parameterNames.nextElement();
+			String num = request.getParameter(goodId);
+			
+		}
+		request.getSession().setAttribute("odersdetails", null);
+		//判断该用户是否是老用户
+		
+		//跳转到个人信息页面(送餐地址，电话)
 
 		request.getSession().setAttribute("odersdetails", null);
 
